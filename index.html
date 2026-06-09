@@ -229,6 +229,79 @@ a{color:inherit;text-decoration:none}
 .toast.success{background:#166534;border-left:3px solid var(--fit)}
 .toast.error{background:#7F1D1D;border-left:3px solid var(--inj)}
 
+/* ===== TESTS ===== */
+.test-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:12px;margin-bottom:22px}
+.tc{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.tc-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.tc-name{font-weight:700;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:110px}
+.rp{font-size:9px;font-weight:700;padding:2px 8px;border-radius:10px;text-transform:uppercase;letter-spacing:0.5px;white-space:nowrap}
+.rp.verde{background:rgba(22,163,74,0.1);color:var(--fit)}
+.rp.ambar{background:rgba(217,119,6,0.1);color:var(--cau)}
+.rp.rojo{background:rgba(220,38,38,0.1);color:var(--inj)}
+.rp.sin{background:var(--raised);color:var(--t3)}
+.tc-rows{display:flex;flex-direction:column;gap:3px}
+.tc-row{display:flex;justify-content:space-between;font-size:11px}
+.tc-lbl{color:var(--t2)}.tc-val{font-weight:600}
+.tc-val.ok{color:var(--fit)}.tc-val.warn{color:var(--cau)}.tc-val.bad{color:var(--inj)}
+.tc-date{font-size:10px;color:var(--t3);margin-top:8px}
+
+/* ===== ACWR ===== */
+.acwr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:20px}
+.ac{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.ac-name{font-weight:700;font-size:12px;margin-bottom:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ac-val{font-family:'Syne',sans-serif;font-size:26px;font-weight:700;line-height:1}
+.ac-lbl{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-top:2px}
+.ac-val.op,.ac-lbl.op{color:var(--fit)}
+.ac-val.ca,.ac-lbl.ca{color:var(--cau)}
+.ac-val.ri,.ac-lbl.ri{color:var(--inj)}
+.ac-val.su,.ac-lbl.su,.ac-val.nd,.ac-lbl.nd{color:var(--t3)}
+.ac-sub{font-size:10px;color:var(--t3);margin-top:3px}
+.ac-bars{display:flex;gap:2px;margin-top:8px;height:24px;align-items:flex-end}
+.ac-bar{min-width:3px;border-radius:2px 2px 0 0;background:var(--accent);opacity:0.35;flex:1;transition:height 0.4s}
+.ac-bar.td{opacity:0.85}
+
+/* ===== FICHA RIESGO ===== */
+.risk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.rc{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.rc-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.rc-name{font-weight:700;font-size:13px}.rc-pos{font-size:10px;color:var(--t2);margin-top:1px}
+.rc-rows{display:flex;flex-direction:column}
+.rcr{display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:6px 0;border-bottom:1px solid var(--border)}
+.rcr:last-child{border:none}
+.rck{color:var(--t2);font-size:11px}.rcv{font-weight:600;font-size:12px}
+.ab{font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px}
+.ab.op{background:rgba(22,163,74,0.1);color:var(--fit)}
+.ab.ca{background:rgba(217,119,6,0.1);color:var(--cau)}
+.ab.ri{background:rgba(220,38,38,0.1);color:var(--inj)}
+.ab.nd,.ab.su{background:var(--raised);color:var(--t3)}
+
+/* ===== BIBLIOTECA ===== */
+.ex-list{display:flex;flex-direction:column;gap:8px}
+.ex-item{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:12px 16px;display:flex;align-items:center;gap:14px;transition:border-color 0.15s}
+.ex-item:hover{border-color:var(--bhi)}
+.ex-em{font-size:22px;width:30px;text-align:center;flex-shrink:0}
+.ex-inf h4{font-size:13px;font-weight:600;margin-bottom:2px}
+.ex-inf p{font-size:11px;color:var(--t2)}
+.ex-tags{display:flex;gap:4px;margin-top:5px;flex-wrap:wrap}
+.ex-tag{font-size:9px;font-weight:600;padding:1px 6px;border-radius:4px;background:var(--ad);color:var(--accent);text-transform:uppercase;letter-spacing:0.3px}
+.ex-acts{margin-left:auto;display:flex;gap:6px;flex-shrink:0}
+
+/* ===== STATS BAR ===== */
+.bar-chart{display:flex;flex-direction:column;gap:7px}
+.br{display:flex;align-items:center;gap:10px;font-size:12px}
+.bl{width:100px;color:var(--t2);flex-shrink:0;font-size:11px;font-weight:500}
+.bt{flex:1;height:20px;background:var(--raised);border-radius:4px;overflow:hidden;border:1px solid var(--border)}
+.bf{height:100%;border-radius:4px;display:flex;align-items:center;padding-left:8px;font-size:10px;font-weight:700;color:rgba(255,255,255,0.9);transition:width 0.8s;min-width:4px}
+.bc{width:24px;text-align:right;font-weight:600;font-size:11px}
+
+/* ===== STAT ROW ===== */
+.sr{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px}
+.sr:last-child{border:none}
+.srk{color:var(--t2)}.srv{font-weight:600}
+
+/* ===== EXPORT PRINT ===== */
+@media print{.sidebar,.sec-head,.mob-btn{display:none!important}body{background:white!important;overflow:visible!important}#app{display:block!important;height:auto!important;overflow:visible!important}.main{margin-left:0!important;height:auto!important;overflow:visible!important}#s-export{display:block!important}.page:not(#s-export){display:none!important}.content{padding:0!important}}
+.exp-card{background:white;border:1px solid #E2E8F0;border-radius:var(--r);padding:20px;margin-bottom:16px;break-inside:avoid}
 /* MOBILE */
 .mob-btn{display:none;position:fixed;top:12px;left:12px;z-index:300;background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:7px 10px;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
 @media(max-width:900px){
@@ -238,6 +311,7 @@ a{color:inherit;text-decoration:none}
   .fr,.fr3,.two-col{grid-template-columns:1fr}
   .inj-body,.acc-summary{grid-template-columns:1fr}
   .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .test-grid,.acwr-grid,.risk-grid{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 </head>
@@ -378,14 +452,120 @@ a{color:inherit;text-decoration:none}
       </div>
     </div>
 
-    <!-- WIP PAGES (Phase 2) -->
-    <div class="page" id="s-carga"><div class="sec-head"><div><div class="ew">06 · Carga</div><h2>Carga · ACWR</h2></div></div><div class="content"><div class="wip-page"><div class="wip-ic">⚡</div><h3>Próximamente — Fase 2</h3><p>Carga de entrenamiento, RPE y ratio ACWR</p></div></div></div>
-    <div class="page" id="s-ficha"><div class="sec-head"><div><div class="ew">07 · Ficha</div><h2>Ficha de Riesgo</h2></div></div><div class="content"><div class="wip-page"><div class="wip-ic">🔍</div><h3>Próximamente — Fase 2</h3><p>Perfil de riesgo individual por jugador</p></div></div></div>
-    <div class="page" id="s-tests"><div class="sec-head"><div><div class="ew">05 · Tests</div><h2>Tests Preventivos</h2></div></div><div class="content"><div class="wip-page"><div class="wip-ic">📊</div><h3>Próximamente — Fase 2</h3><p>Batería de tests y semáforo de riesgo biomecánico</p></div></div></div>
-    <div class="page" id="s-bib"><div class="sec-head"><div><div class="ew">08 · Biblioteca</div><h2>Biblioteca de ejercicios</h2></div></div><div class="content"><div class="wip-page"><div class="wip-ic">🎥</div><h3>Próximamente — Fase 2</h3><p>Ejercicios por fase y enlace a vídeos</p></div></div></div>
-    <div class="page" id="s-rutinas"><div class="sec-head"><div><div class="ew">09 · Rutinas</div><h2>Gestión de rutinas</h2></div></div><div class="content"><div class="wip-page"><div class="wip-ic">📋</div><h3>Próximamente — Fase 2</h3><p>Asignación de programas individuales</p></div></div></div>
-    <div class="page" id="s-stats"><div class="sec-head"><div><div class="ew">10 · Estadísticas</div><h2>Estadísticas</h2></div></div><div class="content"><div class="wip-page"><div class="wip-ic">📈</div><h3>Próximamente — Fase 2</h3><p>Análisis completo de lesiones y precisión de pronóstico</p></div></div></div>
-    <div class="page" id="s-export"><div class="sec-head"><div><div class="ew">11 · Exportar</div><h2>Exportar informe</h2></div></div><div class="content"><div class="wip-page"><div class="wip-ic">⬇</div><h3>Próximamente — Fase 2</h3><p>Informe semanal para el cuerpo técnico</p></div></div></div>
+    <!-- TESTS -->
+    <div class="page" id="s-tests">
+      <div class="sec-head">
+        <div><div class="ew">05 · Tests</div><h2>Tests Preventivos</h2><p>Semáforo de riesgo biomecánico por jugador</p></div>
+        <div class="sha">
+          <button class="btn btn-g btn-sm" onclick="openModal('m-thresholds')">⚙ Umbrales</button>
+          <button class="btn btn-p btn-sm" onclick="openModal('m-test');populateSel('nt-pl');document.getElementById('nt-dt').value=today()">+ Registrar test</button>
+        </div>
+      </div>
+      <div class="content">
+        <div class="tb-bar">
+          <button class="tb-btn active" onclick="showTestTab('sem',this)">Semáforo</button>
+          <button class="tb-btn" onclick="showTestTab('hist',this)">Historial</button>
+        </div>
+        <div id="t-sem"></div>
+        <div id="t-hist" style="display:none;overflow-x:auto">
+          <table class="dt"><thead><tr><th>Fecha</th><th>Jugador</th><th>CMJ</th><th>SJ</th><th>S.10m</th><th>S.30m</th><th>YoYo</th><th>Asim%</th><th>Nordic</th><th>Hooper</th></tr></thead><tbody id="t-hist-body"></tbody></table>
+        </div>
+        <div class="es" id="t-empty" style="display:none"><div class="es-ic">📊</div><h3>Sin tests registrados</h3><p>Registra el primer test para activar el semáforo de riesgo.</p></div>
+      </div>
+    </div>
+
+    <!-- CARGA ACWR -->
+    <div class="page" id="s-carga">
+      <div class="sec-head">
+        <div><div class="ew">06 · Carga</div><h2>Carga de entrenamiento · ACWR</h2><p>RPE × Duración · Ratio óptimo 0.8 – 1.3</p></div>
+        <button class="btn btn-p btn-sm" onclick="openModal('m-carga');populateSel('nl-pl',true);document.getElementById('nl-dt').value=today()">+ Registrar sesión</button>
+      </div>
+      <div class="content">
+        <div id="acwr-cards" class="acwr-grid"></div>
+        <div class="card" style="margin-bottom:18px">
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--t2);margin-bottom:10px">ZONAS DE RIESGO</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:20px;background:var(--raised);color:var(--t2)">◁ 0.8 Subcarga</span>
+            <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:20px;background:rgba(22,163,74,0.1);color:var(--fit)">0.8 – 1.3 Óptimo ✓</span>
+            <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:20px;background:rgba(217,119,6,0.1);color:var(--cau)">1.3 – 1.5 Precaución</span>
+            <span style="font-size:11px;font-weight:600;padding:4px 12px;border-radius:20px;background:rgba(220,38,38,0.1);color:var(--inj)">▷ 1.5 Riesgo alto</span>
+          </div>
+        </div>
+        <div class="card">
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--t2);margin-bottom:14px">SESIONES RECIENTES</div>
+          <div style="overflow-x:auto"><table class="dt"><thead><tr><th>Fecha</th><th>Jugador</th><th>RPE</th><th>Duración (min)</th><th>Carga AU</th><th></th></tr></thead><tbody id="carga-body"></tbody></table></div>
+          <div class="es" id="carga-empty" style="display:none"><div class="es-ic">⚡</div><h3>Sin sesiones registradas</h3><p>Registra la primera sesión para calcular el ACWR del equipo.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FICHA RIESGO -->
+    <div class="page" id="s-ficha">
+      <div class="sec-head"><div><div class="ew">07 · Ficha de riesgo</div><h2>Perfil individual de riesgo</h2><p>Estado, carga, tests e historial por jugador en una sola vista</p></div></div>
+      <div class="content">
+        <div id="risk-grid" class="risk-grid"></div>
+        <div class="es" id="risk-empty" style="display:none"><div class="es-ic">🔍</div><h3>Sin jugadores</h3><p>Añade jugadores en la sección Plantilla para ver sus fichas de riesgo.</p></div>
+      </div>
+    </div>
+
+    <!-- BIBLIOTECA -->
+    <div class="page" id="s-bib">
+      <div class="sec-head">
+        <div><div class="ew">08 · Biblioteca</div><h2>Biblioteca de ejercicios</h2></div>
+        <button class="btn btn-p btn-sm" onclick="openModal('m-exercise')">+ Añadir ejercicio</button>
+      </div>
+      <div class="content">
+        <div class="fb">
+          <button class="fbn active" data-ef="" onclick="filterEx('',this)">Todos</button>
+          <button class="fbn" data-ef="prevencion" onclick="filterEx('prevencion',this)">Prevención</button>
+          <button class="fbn" data-ef="rtt" onclick="filterEx('rtt',this)">RTT</button>
+          <button class="fbn" data-ef="rtp" onclick="filterEx('rtp',this)">RTP</button>
+          <button class="fbn" data-ef="fuerza" onclick="filterEx('fuerza',this)">Fuerza</button>
+          <button class="fbn" data-ef="movilidad" onclick="filterEx('movilidad',this)">Movilidad</button>
+        </div>
+        <div id="ex-list" class="ex-list"></div>
+        <div class="es" id="ex-empty" style="display:none"><div class="es-ic">🎥</div><h3>Biblioteca vacía</h3><p>Añade ejercicios con enlace de YouTube. Se abrirán en una ventana nueva.</p><button class="btn btn-p" onclick="openModal('m-exercise')">+ Añadir ejercicio</button></div>
+      </div>
+    </div>
+
+    <!-- RUTINAS -->
+    <div class="page" id="s-rutinas">
+      <div class="sec-head">
+        <div><div class="ew">09 · Rutinas</div><h2>Gestión de rutinas</h2></div>
+        <button class="btn btn-p btn-sm" onclick="openModal('m-routine');populateRutinaSels()">+ Nueva rutina</button>
+      </div>
+      <div class="content">
+        <div style="overflow-x:auto"><table class="dt"><thead><tr><th>Jugador</th><th>Rutina</th><th>Ejercicios</th><th>Inicio</th><th>Fin</th><th>Estado</th><th></th></tr></thead><tbody id="rut-body"></tbody></table></div>
+        <div class="es" id="rut-empty" style="display:none"><div class="es-ic">📋</div><h3>Sin rutinas asignadas</h3><p>Crea rutinas y asígnalas a jugadores para su seguimiento diario.</p></div>
+      </div>
+    </div>
+
+    <!-- ESTADÍSTICAS -->
+    <div class="page" id="s-stats">
+      <div class="sec-head"><div><div class="ew">10 · Estadísticas</div><h2>Análisis de lesiones</h2></div></div>
+      <div class="content">
+        <div class="two-col" style="margin-bottom:18px">
+          <div class="card"><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--t2);margin-bottom:12px">TIPO DE TEJIDO</div><div class="bar-chart" id="st-type"></div></div>
+          <div class="card"><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--t2);margin-bottom:12px">POR POSICIÓN</div><div class="bar-chart" id="st-pos"></div></div>
+          <div class="card"><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--t2);margin-bottom:12px">POR GRAVEDAD</div><div class="bar-chart" id="st-sev"></div></div>
+          <div class="card"><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--t2);margin-bottom:12px">RESUMEN DE TEMPORADA</div><div id="st-sum"></div></div>
+        </div>
+        <div class="card">
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--t2);margin-bottom:4px">PRECISIÓN RTT / RTP — HISTÓRICO COMPLETO</div>
+          <div style="font-size:11px;color:var(--t2);margin-bottom:14px">Verde = recuperó antes de lo previsto · Rojo = tardó más · Azul = en plazo</div>
+          <div id="st-acc"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPORTAR -->
+    <div class="page" id="s-export">
+      <div class="sec-head">
+        <div><div class="ew">11 · Exportar</div><h2>Informe semanal</h2><p>Para compartir con el cuerpo técnico</p></div>
+        <button class="btn btn-p btn-sm" onclick="window.print()">🖨 Imprimir / PDF</button>
+      </div>
+      <div class="content" id="exp-area"></div>
+    </div>
 
   </div><!-- /main -->
 </div><!-- /app -->
@@ -557,14 +737,14 @@ function updateBadge() {
   const n=D.injuries.filter(i=>i.active).length;
   const b=document.getElementById('inj-badge'); b.textContent=n; b.style.display=n?'inline-block':'none';
 }
-function populateSel(id) {
+function populateSel(id, includeAll=false) {
   const sel=document.getElementById(id); if(!sel) return;
-  sel.innerHTML='<option value="">Selecciona jugador...</option>';
+  sel.innerHTML = includeAll ? '<option value="__ALL__">— Todo el equipo —</option>' : '<option value="">Selecciona jugador...</option>';
   [...D.players].sort((a,b)=>a.d-b.d).forEach(p => sel.innerHTML+=`<option value="${p.id}">${p.d} · ${p.n}</option>`);
 }
 
 // ============================================================
-// NAVIGATION
+// NAVIGATION — full render map
 // ============================================================
 function go(id, el) {
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
@@ -575,6 +755,10 @@ function go(id, el) {
   const renders = {
     's-dash':renderDash, 's-plantilla':()=>renderPlantilla(PF),
     's-avail':renderAvail, 's-lesiones':renderLesiones,
+    's-tests':renderTests, 's-carga':renderCarga,
+    's-ficha':renderFicha, 's-bib':()=>renderBib(EF),
+    's-rutinas':renderRutinas, 's-stats':renderStats,
+    's-export':renderExport,
   };
   if(renders[id]) renders[id]();
 }
@@ -1014,10 +1198,495 @@ function renderInjAccuracy() {
 }
 
 // ============================================================
-// INIT
+// TESTS
+// ============================================================
+let TH = { cmj:32, asim:15, sp10:1.85, hooper:28 };
+let EF = ''; // exercise filter
+
+function showTestTab(v, el) {
+  document.querySelectorAll('[onclick*="showTestTab"]').forEach(b=>b.classList.remove('active')); el.classList.add('active');
+  document.getElementById('t-sem').style.display = v==='sem' ? '' : 'none';
+  document.getElementById('t-hist').style.display = v==='hist' ? '' : 'none';
+}
+
+function saveTest() {
+  const pid=document.getElementById('nt-pl').value, date=document.getElementById('nt-dt').value;
+  if(!pid||!date){showToast('Jugador y fecha obligatorios','error');return;}
+  D.tests.push({id:'t'+Date.now(), pid, date,
+    cmj:parseFloat(document.getElementById('nt-cmj').value)||null,
+    sj:parseFloat(document.getElementById('nt-sj').value)||null,
+    sp10:parseFloat(document.getElementById('nt-s10').value)||null,
+    sp30:parseFloat(document.getElementById('nt-s30').value)||null,
+    yoyo:parseFloat(document.getElementById('nt-yy').value)||null,
+    asim:parseFloat(document.getElementById('nt-as').value)||null,
+    nordic:parseInt(document.getElementById('nt-nc').value)||null,
+    hooper:parseInt(document.getElementById('nt-hp').value)||null,
+  });
+  save(); closeModal('m-test'); renderTests(); showToast('Test guardado ✓','success');
+}
+
+function openThresholds() {
+  document.getElementById('th-cmj').value=TH.cmj; document.getElementById('th-as').value=TH.asim;
+  document.getElementById('th-s10').value=TH.sp10; document.getElementById('th-hp').value=TH.hooper;
+  openModal('m-thresholds');
+}
+
+function saveThresholds() {
+  TH.cmj=parseFloat(document.getElementById('th-cmj').value)||32;
+  TH.asim=parseFloat(document.getElementById('th-as').value)||15;
+  TH.sp10=parseFloat(document.getElementById('th-s10').value)||1.85;
+  TH.hooper=parseFloat(document.getElementById('th-hp').value)||28;
+  closeModal('m-thresholds'); renderTests(); showToast('Umbrales actualizados','success');
+}
+
+function renderTests() {
+  const empty=document.getElementById('t-empty');
+  if(!D.tests.length) { empty.style.display=''; document.getElementById('t-sem').innerHTML=''; document.getElementById('t-hist-body').innerHTML=''; return; }
+  empty.style.display='none';
+
+  let semHtml='<div class="test-grid">';
+  [...D.players].sort((a,b)=>a.d-b.d).forEach(p=>{
+    const tests=D.tests.filter(t=>t.pid===p.id).sort((a,b)=>new Date(b.date)-new Date(a.date));
+    const last=tests[0];
+    if(!last){ semHtml+=`<div class="tc" style="opacity:0.5"><div class="tc-head"><span class="tc-name">${p.d} · ${sn(p.n)}</span><span class="rp sin">Sin test</span></div></div>`; return; }
+    let risks=0;
+    if(last.cmj&&last.cmj<TH.cmj) risks++;
+    if(last.asim&&last.asim>TH.asim) risks++;
+    if(last.sp10&&last.sp10>TH.sp10) risks++;
+    if(last.hooper&&last.hooper>TH.hooper) risks++;
+    const rc=risks===0?'verde':risks===1?'ambar':'rojo';
+    const rl=risks===0?'Sin riesgo':risks===1?'Atención':'Alto riesgo';
+    const mv=(lbl,v,ref,inv=false)=>v!=null?`<div class="tc-row"><span class="tc-lbl">${lbl}</span><span class="tc-val ${(inv?v<ref:v>ref)?'warn':'ok'}">${v}</span></div>`:'';
+    semHtml+=`<div class="tc">
+      <div class="tc-head"><span class="tc-name" title="${p.n}">${p.d} · ${sn(p.n)}</span><span class="rp ${rc}">${rl}</span></div>
+      <div class="tc-rows">
+        ${mv('CMJ (cm)',last.cmj,TH.cmj,true)}
+        ${mv('Asimetría (%)',last.asim,TH.asim)}
+        ${mv('Sprint 10m (s)',last.sp10,TH.sp10)}
+        ${mv('Hooper',last.hooper,TH.hooper)}
+      </div>
+      <div class="tc-date">${last.date}</div>
+    </div>`;
+  });
+  semHtml+='</div>';
+  document.getElementById('t-sem').innerHTML=semHtml;
+
+  document.getElementById('t-hist-body').innerHTML=[...D.tests].sort((a,b)=>new Date(b.date)-new Date(a.date)).map(t=>{
+    const p=D.players.find(pl=>pl.id===t.pid);
+    return `<tr>
+      <td style="color:var(--t2)">${t.date}</td>
+      <td class="nc">${p?p.d+' · '+sn(p.n):'—'}</td>
+      <td>${t.cmj??'—'}</td><td>${t.sj??'—'}</td><td>${t.sp10??'—'}</td><td>${t.sp30??'—'}</td>
+      <td>${t.yoyo??'—'}</td>
+      <td style="color:${t.asim&&t.asim>TH.asim?'var(--inj)':'var(--fit)'}">${t.asim!=null?t.asim+'%':'—'}</td>
+      <td>${t.nordic??'—'}</td>
+      <td style="color:${t.hooper&&t.hooper>TH.hooper?'var(--inj)':'var(--fit)'}">${t.hooper??'—'}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ============================================================
+// CARGA / ACWR
+// ============================================================
+function calcACWR(pid) {
+  const now=new Date();
+  const loads=D.loads.filter(l=>l.pid===pid).sort((a,b)=>new Date(a.date)-new Date(b.date));
+  if(!loads.length) return {acwr:null, acute:0, chronic:0, last28:Array(28).fill(0)};
+  const acute=loads.filter(l=>(now-new Date(l.date))/86400000<=7).reduce((s,l)=>s+l.au,0);
+  const loads28=loads.filter(l=>(now-new Date(l.date))/86400000<=28);
+  const chronic=loads28.length ? loads28.reduce((s,l)=>s+l.au,0)/4 : 0;
+  const acwr=chronic>0 ? parseFloat((acute/chronic).toFixed(2)) : null;
+  const last28=Array.from({length:28},(_,i)=>{
+    const d=new Date(now); d.setDate(d.getDate()-27+i);
+    const ds=d.toISOString().slice(0,10);
+    return loads.filter(l=>l.date===ds).reduce((s,l)=>s+l.au,0);
+  });
+  return {acwr, acute, chronic, last28};
+}
+
+function acwrCls(v) { return v===null?'nd':v<0.8?'su':v<=1.3?'op':v<=1.5?'ca':'ri'; }
+function acwrLbl(v) { return v===null?'Sin datos':v<0.8?'Subcarga':v<=1.3?'Óptimo':v<=1.5?'Precaución':'Riesgo alto'; }
+
+function saveCarga() {
+  const pid=document.getElementById('nl-pl').value, date=document.getElementById('nl-dt').value;
+  const rpe=parseFloat(document.getElementById('nl-rpe').value)||0;
+  const dur=parseInt(document.getElementById('nl-dur').value)||0;
+  if(!pid||!date||!rpe||!dur){showToast('Todos los campos son obligatorios','error');return;}
+  const au=Math.round(rpe*dur);
+  if(pid==='__ALL__') {
+    D.players.forEach(p=>D.loads.push({id:'l'+Date.now()+Math.random().toString(36).slice(2),pid:p.id,date,rpe,dur,au}));
+    showToast('Sesión de equipo registrada ✓','success');
+  } else {
+    D.loads.push({id:'l'+Date.now(),pid,date,rpe,dur,au});
+    showToast('Sesión registrada ✓','success');
+  }
+  save(); closeModal('m-carga'); renderCarga();
+}
+
+function renderCarga() {
+  const empty=document.getElementById('carga-empty');
+  const maxAU=D.loads.length ? Math.max(...D.loads.map(l=>l.au),1) : 1;
+
+  let cards='';
+  [...D.players].sort((a,b)=>a.d-b.d).forEach(p=>{
+    const {acwr,acute,last28}=calcACWR(p.id);
+    const cls=acwrCls(acwr);
+    const bars=last28.map((v,i)=>`<div class="ac-bar ${i===27?'td':''}" style="height:${v?Math.max(4,Math.round(v/maxAU*24)):2}px"></div>`).join('');
+    cards+=`<div class="ac">
+      <div class="ac-name" title="${p.n}">${p.d} · ${sn(p.n)}</div>
+      <div class="ac-val ${cls}">${acwr!==null?acwr.toFixed(2):'—'}</div>
+      <div class="ac-lbl ${cls}">${acwrLbl(acwr)}</div>
+      <div class="ac-sub">Aguda: ${acute} AU</div>
+      <div class="ac-bars">${bars}</div>
+    </div>`;
+  });
+  document.getElementById('acwr-cards').innerHTML = cards||'<div style="color:var(--t2);font-size:13px">Añade jugadores y registra sesiones para ver el ACWR.</div>';
+
+  const rows=[...D.loads].sort((a,b)=>new Date(b.date)-new Date(a.date)).slice(0,40);
+  if(!rows.length){empty.style.display='';document.getElementById('carga-body').innerHTML='';return;}
+  empty.style.display='none';
+  document.getElementById('carga-body').innerHTML=rows.map(l=>{
+    const p=D.players.find(pl=>pl.id===l.pid);
+    return `<tr>
+      <td style="color:var(--t2)">${l.date}</td>
+      <td class="nc">${p?p.d+' · '+sn(p.n):'—'}</td>
+      <td>${l.rpe}</td><td>${l.dur} min</td>
+      <td style="font-weight:600;color:var(--accent)">${l.au}</td>
+      <td><button class="btn btn-d btn-sm btn-ic" onclick="deleteCarga('${l.id}')">🗑</button></td>
+    </tr>`;
+  }).join('');
+}
+
+function deleteCarga(id) {
+  D.loads=D.loads.filter(l=>l.id!==id); save(); renderCarga();
+}
+
+// ============================================================
+// FICHA RIESGO
+// ============================================================
+function renderFicha() {
+  const empty=document.getElementById('risk-empty');
+  if(!D.players.length){empty.style.display='';document.getElementById('risk-grid').innerHTML='';return;}
+  empty.style.display='none';
+
+  document.getElementById('risk-grid').innerHTML=[...D.players].sort((a,b)=>a.d-b.d).map(p=>{
+    const {acwr}=calcACWR(p.id);
+    const acls=acwrCls(acwr);
+    const lastTest=D.tests.filter(t=>t.pid===p.id).sort((a,b)=>new Date(b.date)-new Date(a.date))[0];
+    const injAll=D.injuries.filter(i=>i.pid===p.id);
+    const activeInj=injAll.find(i=>i.active);
+    const lastClosed=injAll.filter(i=>!i.active).sort((a,b)=>new Date(b.date)-new Date(a.date))[0];
+    const daysSince=lastClosed?Math.ceil((new Date()-new Date(lastClosed.date))/86400000):null;
+
+    let testRisk='Sin test', testCol='var(--t2)';
+    if(lastTest) {
+      let r=0;
+      if(lastTest.cmj&&lastTest.cmj<TH.cmj) r++;
+      if(lastTest.asim&&lastTest.asim>TH.asim) r++;
+      if(lastTest.sp10&&lastTest.sp10>TH.sp10) r++;
+      testRisk=r===0?'Sin riesgo':r===1?'Atención':'Alto riesgo';
+      testCol=r===0?'var(--fit)':r===1?'var(--cau)':'var(--inj)';
+    }
+    const sMap={fit:'fit',caution:'caution',injury:'injury'};
+    const lMap={fit:'Disponible',caution:'Precaución',injury:'Lesionado'};
+
+    return `<div class="rc">
+      <div class="rc-head">
+        <div><div class="rc-name">${p.d} · ${sn(p.n)}</div><div class="rc-pos">${p.ps||p.pos}</div></div>
+        <span class="status ${sMap[p.status]||'fit'}">${lMap[p.status]||'Disponible'}</span>
+      </div>
+      <div class="rc-rows">
+        <div class="rcr"><span class="rck">ACWR actual</span><span class="ab ${acls}">${acwr!==null?acwr.toFixed(2)+'  '+acwrLbl(acwr):'Sin datos'}</span></div>
+        <div class="rcr"><span class="rck">Último test</span><span class="rcv" style="font-size:11px;color:${testCol}">${lastTest?lastTest.date+' · '+testRisk:testRisk}</span></div>
+        <div class="rcr"><span class="rck">Lesiones temporada</span><span class="rcv">${injAll.length}</span></div>
+        <div class="rcr"><span class="rck">Días desde última lesión</span><span class="rcv">${daysSince!==null?daysSince+'d':'Sin lesiones'}</span></div>
+        ${activeInj?`<div class="rcr"><span class="rck">Lesión activa</span><span class="rcv" style="color:var(--inj);font-size:11px">${cap(activeInj.type)} · ${activeInj.zone||'—'}</span></div>`:''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ============================================================
+// BIBLIOTECA
+// ============================================================
+const phaseColors={prevencion:'#16A34A',rtt:'#D97706',rtp:'#2563EB',fuerza:'#7C3AED',movilidad:'#0EA5E9'};
+
+function filterEx(f, el) {
+  EF=f;
+  document.querySelectorAll('[data-ef]').forEach(b=>b.classList.remove('active')); el.classList.add('active');
+  renderBib(f);
+}
+
+function saveEx() {
+  const name=document.getElementById('ne-n').value.trim();
+  if(!name){showToast('Nombre obligatorio','error');return;}
+  let yt=document.getElementById('ne-yt').value.trim();
+  if(yt.includes('youtube.com/watch')){const m=yt.match(/v=([^&]+)/);if(m)yt=m[1];}
+  else if(yt.includes('youtu.be/')){yt=yt.split('youtu.be/')[1].split('?')[0];}
+  D.exercises.push({id:'e'+Date.now(), name, desc:document.getElementById('ne-d').value,
+    phase:document.getElementById('ne-ph').value, muscle:document.getElementById('ne-m').value,
+    series:document.getElementById('ne-s').value, mat:document.getElementById('ne-mt').value, yt});
+  save(); closeModal('m-exercise'); renderBib(EF); showToast('Ejercicio añadido ✓','success');
+}
+
+function deleteEx(id) {
+  if(!confirm('¿Eliminar este ejercicio?')) return;
+  D.exercises=D.exercises.filter(e=>e.id!==id); save(); renderBib(EF);
+}
+
+function renderBib(f) {
+  let ex=D.exercises; if(f) ex=ex.filter(e=>e.phase===f);
+  const empty=document.getElementById('ex-empty');
+  if(!ex.length){empty.style.display='';document.getElementById('ex-list').innerHTML='';return;}
+  empty.style.display='none';
+  document.getElementById('ex-list').innerHTML=ex.map(e=>{
+    const col=phaseColors[e.phase]||'#2563EB';
+    return `<div class="ex-item">
+      <div class="ex-em">💪</div>
+      <div class="ex-inf">
+        <h4>${e.name}</h4>
+        <p>${e.desc||''}</p>
+        <div class="ex-tags">
+          <span class="ex-tag" style="background:${col}18;color:${col}">${e.phase}</span>
+          ${e.muscle?`<span class="ex-tag">${e.muscle}</span>`:''}
+          ${e.series?`<span class="ex-tag">${e.series}</span>`:''}
+          ${e.mat?`<span class="ex-tag">${e.mat}</span>`:''}
+        </div>
+      </div>
+      <div class="ex-acts">
+        ${e.yt?`<a href="https://youtube.com/watch?v=${e.yt}" target="_blank" class="btn btn-g btn-sm">▶ Ver</a>`:''}
+        <button class="btn btn-d btn-sm btn-ic" onclick="deleteEx('${e.id}')">🗑</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ============================================================
+// RUTINAS
+// ============================================================
+function populateRutinaSels() {
+  populateSel('nr-pl');
+  document.getElementById('nr-s').value=today();
+  document.getElementById('nr-exs').innerHTML=D.exercises.length
+    ? D.exercises.map(e=>`<label style="display:flex;gap:8px;align-items:center;padding:5px;border-radius:5px;font-size:12px;cursor:pointer"><input type="checkbox" value="${e.id}" style="accent-color:var(--accent)"><span>${e.name} <span style="color:var(--t3)">[${e.phase}]</span></span></label>`).join('')
+    : '<div style="color:var(--t3);font-size:12px;padding:4px">Añade ejercicios en la Biblioteca primero.</div>';
+}
+
+function saveRoutine() {
+  const pid=document.getElementById('nr-pl').value, name=document.getElementById('nr-n').value.trim();
+  if(!pid||!name){showToast('Jugador y nombre obligatorios','error');return;}
+  const selected=[...document.getElementById('nr-exs').querySelectorAll('input:checked')].map(i=>i.value);
+  D.routines.push({id:'r'+Date.now(), pid, name,
+    start:document.getElementById('nr-s').value, end:document.getElementById('nr-e').value,
+    exercises:selected, active:true});
+  save(); closeModal('m-routine'); renderRutinas(); showToast('Rutina asignada ✓','success');
+}
+
+function deleteRoutine(id) {
+  if(!confirm('¿Eliminar esta rutina?')) return;
+  D.routines=D.routines.filter(r=>r.id!==id); save(); renderRutinas();
+}
+
+function renderRutinas() {
+  const empty=document.getElementById('rut-empty');
+  if(!D.routines.length){empty.style.display='';document.getElementById('rut-body').innerHTML='';return;}
+  empty.style.display='none';
+  const td=today();
+  document.getElementById('rut-body').innerHTML=[...D.routines].sort((a,b)=>new Date(b.start)-new Date(a.start)).map(r=>{
+    const p=D.players.find(pl=>pl.id===r.pid);
+    const exNames=r.exercises.map(eid=>{const e=D.exercises.find(ex=>ex.id===eid);return e?e.name:'?';}).join(', ');
+    const isActive=(!r.end||r.end>=td)&&r.active;
+    return `<tr>
+      <td class="nc">${p?p.d+' · '+sn(p.n):'—'}</td>
+      <td style="font-weight:600">${r.name}</td>
+      <td style="font-size:11px;color:var(--t2);max-width:180px">${exNames||'—'}</td>
+      <td style="color:var(--t2)">${r.start||'—'}</td>
+      <td style="color:var(--t2)">${r.end||'Sin fin'}</td>
+      <td><span class="status ${isActive?'fit':'caution'}">${isActive?'Activa':'Finalizada'}</span></td>
+      <td><button class="btn btn-d btn-sm btn-ic" onclick="deleteRoutine('${r.id}')">🗑</button></td>
+    </tr>`;
+  }).join('');
+}
+
+// ============================================================
+// ESTADÍSTICAS
+// ============================================================
+function makeBar(elId, data, colors) {
+  const max=Math.max(...Object.values(data),1);
+  document.getElementById(elId).innerHTML=Object.keys(data).length
+    ? Object.entries(data).map(([k,n])=>`<div class="br">
+        <div class="bl">${cap(k)}</div>
+        <div class="bt"><div class="bf" style="width:${Math.round(n/max*100)}%;background:${colors[k]||'#2563EB'}">${n>0?n:''}</div></div>
+        <div class="bc">${n}</div>
+      </div>`).join('')
+    : '<div style="color:var(--t3);font-size:12px">Sin datos</div>';
+}
+
+function renderStats() {
+  const byType={}, byPos={}, bySev={};
+  D.injuries.forEach(i=>{
+    byType[i.type]=(byType[i.type]||0)+1;
+    bySev[i.sv||'leve']=(bySev[i.sv||'leve']||0)+1;
+    const p=D.players.find(pl=>pl.id===i.pid); if(p) byPos[p.pos]=(byPos[p.pos]||0)+1;
+  });
+  const typeColors={muscular:"#D97706",ligamentosa:'#DC2626',tendinosa:'#7C3AED',osea:'#2563EB',contusion:'#0EA5E9',sobrecarga:'#16A34A'};
+  makeBar('st-type',byType,{muscular:'#D97706',ligamentosa:'#DC2626',tendinosa:'#7C3AED',osea:'#2563EB',contusion:'#0EA5E9',sobrecarga:'#16A34A'});
+  makeBar('st-pos',byPos,{POR:'#2563EB',DEF:'#16A34A',MED:'#D97706',DEL:'#DC2626'});
+  makeBar('st-sev',bySev,{leve:'#16A34A',moderada:'#D97706',grave:'#DC2626'});
+
+  const totalDays=D.injuries.reduce((s,i)=>s+(i.rtp_real||daysOff(i.date)),0);
+  document.getElementById('st-sum').innerHTML=`
+    <div class="sr"><span class="srk">Total lesiones</span><span class="srv">${D.injuries.length}</span></div>
+    <div class="sr"><span class="srk">Activas</span><span class="srv" style="color:var(--inj)">${D.injuries.filter(i=>i.active).length}</span></div>
+    <div class="sr"><span class="srk">Total días de baja</span><span class="srv">${totalDays}</span></div>
+    <div class="sr"><span class="srk">Recaídas</span><span class="srv" style="color:var(--cau)">${D.injuries.filter(i=>i.recaida==='si').length}</span></div>
+    <div class="sr"><span class="srk">Disponibilidad actual</span><span class="srv" style="color:var(--fit)">${D.players.filter(p=>p.status==='fit').length}/${D.players.length}</span></div>`;
+
+  const closed=D.injuries.filter(i=>!i.active&&i.rtt_real!=null&&i.rtp_real!=null);
+  if(!closed.length){document.getElementById('st-acc').innerHTML='<div style="color:var(--t3);font-size:13px;padding:8px 0">Sin altas médicas con datos reales todavía. Los datos aparecerán al registrar el alta con RTT/RTP reales.</div>';return;}
+
+  const avgRTT=closed.reduce((s,i)=>s+(i.rtt_real-i.rtt_est),0)/closed.length;
+  const avgRTP=closed.reduce((s,i)=>s+(i.rtp_real-i.rtp_est),0)/closed.length;
+  const exact=closed.filter(i=>Math.abs(i.rtp_real-i.rtp_est)<=3).length;
+  const pct=Math.round(exact/closed.length*100);
+
+  document.getElementById('st-acc').innerHTML=`
+    <div class="acc-summary" style="margin-bottom:20px">
+      <div class="acc-kpi"><div class="acc-kpi-val" style="color:${Math.abs(avgRTT)<=2?'var(--fit)':avgRTT>0?'var(--inj)':'var(--accent)'}">${avgRTT>0?'+':''}${avgRTT.toFixed(1)}d</div><div class="acc-kpi-lbl">Desviación media RTT</div></div>
+      <div class="acc-kpi"><div class="acc-kpi-val" style="color:${Math.abs(avgRTP)<=2?'var(--fit)':avgRTP>0?'var(--inj)':'var(--accent)'}">${avgRTP>0?'+':''}${avgRTP.toFixed(1)}d</div><div class="acc-kpi-lbl">Desviación media RTP</div></div>
+      <div class="acc-kpi"><div class="acc-kpi-val" style="color:${pct>=70?'var(--fit)':pct>=50?'var(--cau)':'var(--inj)'}">${pct}%</div><div class="acc-kpi-lbl">Pronósticos RTP ±3d</div></div>
+    </div>
+    ${closed.map(inj=>{
+      const p=D.players.find(pl=>pl.id===inj.pid);
+      const rttD=inj.rtt_real-inj.rtt_est, rtpD=inj.rtp_real-inj.rtp_est;
+      const dCls=d=>d===0?'ex':d>0?'la':'fa';
+      const dTxt=d=>d===0?'En plazo':d>0?`+${d}d`:Math.abs(d)+'d antes';
+      return `<div class="acc-row">
+        <div class="acc-pl">${p?p.d+' · '+sn(p.n):'—'}</div>
+        <div class="acc-meta">${cap(inj.type)}<br><span style="color:var(--t3)">${inj.zone||''}</span></div>
+        <div class="acc-bl">
+          <div class="acc-ln"><span class="acc-k">RTT</span><span class="acc-v">${inj.rtt_est}d est. → ${inj.rtt_real}d real</span><span class="acc-d ${dCls(rttD)}">${dTxt(rttD)}</span></div>
+          <div class="acc-ln"><span class="acc-k">RTP</span><span class="acc-v">${inj.rtp_est}d est. → ${inj.rtp_real}d real</span><span class="acc-d ${dCls(rtpD)}">${dTxt(rtpD)}</span></div>
+        </div>
+      </div>`;
+    }).join('')}`;
+}
+
+// ============================================================
+// EXPORT
+// ============================================================
+function renderExport() {
+  const now=new Date().toLocaleDateString('es-ES',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  const fit=D.players.filter(p=>p.status==='fit').length;
+  const ai=D.injuries.filter(i=>i.active);
+  const acwrAlerts=D.players.filter(p=>{const {acwr}=calcACWR(p.id);return acwr!==null&&acwr>1.3;});
+
+  document.getElementById('exp-area').innerHTML=`
+    <div class="exp-card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:20px">
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800">${CC?.name||'Football Club'}</div>
+          <div style="font-size:12px;color:var(--t2)">${CC?.comp||''} · Informe semanal · ${now}</div>
+        </div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;text-align:center">
+          <div><div style="font-family:'Syne',sans-serif;font-size:28px;font-weight:700;color:var(--fit)">${fit}</div><div style="font-size:11px;color:var(--t2)">Disponibles</div></div>
+          <div><div style="font-family:'Syne',sans-serif;font-size:28px;font-weight:700;color:var(--inj)">${ai.length}</div><div style="font-size:11px;color:var(--t2)">Lesionados</div></div>
+          <div><div style="font-family:'Syne',sans-serif;font-size:28px;font-weight:700;color:var(--cau)">${acwrAlerts.length}</div><div style="font-size:11px;color:var(--t2)">Alertas ACWR</div></div>
+        </div>
+      </div>
+    </div>
+    ${ai.length?`<div class="exp-card" style="border-left:3px solid var(--inj)">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--t2);margin-bottom:12px">LESIONADOS ACTIVOS</div>
+      ${ai.map(inj=>{const p=D.players.find(pl=>pl.id===inj.pid);const d=daysOff(inj.date);const left=Math.max(0,inj.rtp_est-d);
+        return `<div class="sr"><span class="srk">${p?p.d+' · '+p.n:'—'}</span><span class="srv">${cap(inj.type)} · ${inj.zone||'—'} · Día ${d} · RTP ~${left}d</span></div>`;}).join('')}
+    </div>`:''}
+    ${acwrAlerts.length?`<div class="exp-card" style="border-left:3px solid var(--cau)">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--t2);margin-bottom:12px">ALERTAS DE CARGA (ACWR &gt; 1.3)</div>
+      ${acwrAlerts.map(p=>{const {acwr}=calcACWR(p.id);return`<div class="sr"><span class="srk">${p.d} · ${p.n}</span><span class="srv" style="color:${acwr>1.5?'var(--inj)':'var(--cau)'}">${acwr.toFixed(2)} — ${acwrLbl(acwr)}</span></div>`;}).join('')}
+    </div>`:''}
+    <div class="exp-card" style="border-left:3px solid var(--fit)">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--t2);margin-bottom:12px">DISPONIBILIDAD POR POSICIÓN</div>
+      ${['POR','DEF','MED','DEL'].map(pos=>{const t=D.players.filter(p=>p.pos===pos).length;const f=D.players.filter(p=>p.pos===pos&&p.status==='fit').length;return t?`<div class="sr"><span class="srk">${{POR:'Porteros',DEF:'Defensas',MED:'Centrocampistas',DEL:'Delanteros'}[pos]}</span><span class="srv">${f}/${t} disponibles</span></div>`:'';}).join('')}
+    </div>`;
+}
+
+// ============================================================
 // ============================================================
 load();
 renderHome();
 </script>
+<!-- TEST MODAL -->
+<div class="overlay" id="m-test">
+  <div class="modal">
+    <div class="mh"><h3>Registrar test</h3><button class="mc" onclick="closeModal('m-test')">✕</button></div>
+    <div class="mb">
+      <div class="fr"><div class="fg"><label class="fl">Jugador</label><select class="fc" id="nt-pl"></select></div><div class="fg"><label class="fl">Fecha</label><input class="fc" type="date" id="nt-dt"></div></div>
+      <div class="fr"><div class="fg"><label class="fl">CMJ (cm)</label><input class="fc" type="number" step="0.1" id="nt-cmj" placeholder="38.0"></div><div class="fg"><label class="fl">SJ (cm)</label><input class="fc" type="number" step="0.1" id="nt-sj" placeholder="34.0"></div></div>
+      <div class="fr"><div class="fg"><label class="fl">Sprint 10m (s)</label><input class="fc" type="number" step="0.01" id="nt-s10" placeholder="1.74"></div><div class="fg"><label class="fl">Sprint 30m (s)</label><input class="fc" type="number" step="0.01" id="nt-s30" placeholder="4.12"></div></div>
+      <div class="fr"><div class="fg"><label class="fl">YoYo IR1 (nivel)</label><input class="fc" type="number" step="0.5" id="nt-yy" placeholder="19.5"></div><div class="fg"><label class="fl">Asimetría CMJ (%)</label><input class="fc" type="number" step="0.1" id="nt-as" placeholder="8.0"></div></div>
+      <div class="fr"><div class="fg"><label class="fl">Nordic Curl (reps)</label><input class="fc" type="number" id="nt-nc" placeholder="6"></div><div class="fg"><label class="fl">Hooper Index (4-40)</label><input class="fc" type="number" id="nt-hp" placeholder="18"></div></div>
+      <button class="btn btn-p" style="width:100%;justify-content:center" onclick="saveTest()">Guardar test</button>
+    </div>
+  </div>
+</div>
+
+<!-- UMBRALES MODAL -->
+<div class="overlay" id="m-thresholds">
+  <div class="modal">
+    <div class="mh"><h3>Umbrales de riesgo</h3><button class="mc" onclick="closeModal('m-thresholds')">✕</button></div>
+    <div class="mb">
+      <div class="hint">Define los valores mínimos/máximos que activan las alertas del semáforo.</div>
+      <div class="fr"><div class="fg"><label class="fl">CMJ mínimo (cm)</label><input class="fc" type="number" id="th-cmj" placeholder="32"></div><div class="fg"><label class="fl">Asimetría máx (%)</label><input class="fc" type="number" id="th-as" placeholder="15"></div></div>
+      <div class="fr"><div class="fg"><label class="fl">Sprint 10m máx (s)</label><input class="fc" type="number" step="0.01" id="th-s10" placeholder="1.85"></div><div class="fg"><label class="fl">Hooper alerta (>)</label><input class="fc" type="number" id="th-hp" placeholder="28"></div></div>
+      <button class="btn btn-p" style="width:100%;justify-content:center" onclick="saveThresholds()">Guardar umbrales</button>
+    </div>
+  </div>
+</div>
+
+<!-- CARGA MODAL -->
+<div class="overlay" id="m-carga">
+  <div class="modal">
+    <div class="mh"><h3>Registrar sesión</h3><button class="mc" onclick="closeModal('m-carga')">✕</button></div>
+    <div class="mb">
+      <div class="fg"><label class="fl">Jugador</label><select class="fc" id="nl-pl"></select></div>
+      <div class="fr"><div class="fg"><label class="fl">Fecha</label><input class="fc" type="date" id="nl-dt"></div><div class="fg"><label class="fl">RPE (1-10)</label><input class="fc" type="number" min="1" max="10" id="nl-rpe" placeholder="7"></div></div>
+      <div class="fg"><label class="fl">Duración (minutos)</label><input class="fc" type="number" id="nl-dur" placeholder="90"></div>
+      <div class="hint">Carga AU = RPE × Duración · Selecciona "Todo el equipo" para sesión colectiva</div>
+      <button class="btn btn-p" style="width:100%;justify-content:center" onclick="saveCarga()">Guardar sesión</button>
+    </div>
+  </div>
+</div>
+
+<!-- EXERCISE MODAL -->
+<div class="overlay" id="m-exercise">
+  <div class="modal">
+    <div class="mh"><h3>Añadir ejercicio</h3><button class="mc" onclick="closeModal('m-exercise')">✕</button></div>
+    <div class="mb">
+      <div class="fg"><label class="fl">Nombre</label><input class="fc" id="ne-n" placeholder="Nordic Curl"></div>
+      <div class="fg"><label class="fl">Descripción</label><textarea class="fc" id="ne-d" rows="2" placeholder="Descripción breve del ejercicio..."></textarea></div>
+      <div class="fr"><div class="fg"><label class="fl">Fase</label><select class="fc" id="ne-ph"><option value="prevencion">Prevención</option><option value="rtt">RTT</option><option value="rtp">RTP</option><option value="fuerza">Fuerza</option><option value="movilidad">Movilidad</option></select></div><div class="fg"><label class="fl">Músculo / zona</label><input class="fc" id="ne-m" placeholder="Isquiotibiales"></div></div>
+      <div class="fr"><div class="fg"><label class="fl">Series × Reps</label><input class="fc" id="ne-s" placeholder="3×8"></div><div class="fg"><label class="fl">Material</label><input class="fc" id="ne-mt" placeholder="Sin material"></div></div>
+      <div class="fg"><label class="fl">ID YouTube (o URL completa)</label><input class="fc" id="ne-yt" placeholder="dLw3fxTBTX0 o https://youtu.be/..."></div>
+      <button class="btn btn-p" style="width:100%;justify-content:center" onclick="saveEx()">Añadir ejercicio</button>
+    </div>
+  </div>
+</div>
+
+<!-- ROUTINE MODAL -->
+<div class="overlay" id="m-routine">
+  <div class="modal">
+    <div class="mh"><h3>Nueva rutina</h3><button class="mc" onclick="closeModal('m-routine')">✕</button></div>
+    <div class="mb">
+      <div class="fg"><label class="fl">Jugador</label><select class="fc" id="nr-pl"></select></div>
+      <div class="fg"><label class="fl">Nombre de la rutina</label><input class="fc" id="nr-n" placeholder="Readaptación Isquio Fase 2"></div>
+      <div class="fr"><div class="fg"><label class="fl">Inicio</label><input class="fc" type="date" id="nr-s"></div><div class="fg"><label class="fl">Fin</label><input class="fc" type="date" id="nr-e"></div></div>
+      <div class="fg"><label class="fl">Ejercicios</label>
+        <div id="nr-exs" style="max-height:150px;overflow-y:auto;display:flex;flex-direction:column;gap:4px;background:var(--raised);border-radius:var(--rs);padding:8px;border:1px solid var(--border)"></div>
+      </div>
+      <button class="btn btn-p" style="width:100%;justify-content:center;margin-top:10px" onclick="saveRoutine()">Guardar rutina</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
