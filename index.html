@@ -212,6 +212,9 @@ button,select,input,textarea{font-family:inherit}
       <div class="nb">CARGA & RIESGO</div>
       <div class="ni" data-s="pg-load" onclick="GS('pg-load',this)"><span class="ico">⚡</span>Carga RPE<span class="bdg" id="bdg-load">0</span></div>
       <div class="ni" data-s="pg-risk" onclick="GS('pg-risk',this)"><span class="ico">🎯</span>Ficha de Riesgo</div>
+      <div class="nb">RECURSOS</div>
+      <div class="ni" data-s="pg-lib" onclick="GS('pg-lib',this)"><span class="ico">📚</span>Biblioteca</div>
+      <div class="ni" data-s="pg-rut" onclick="GS('pg-rut',this)"><span class="ico">📋</span>Rutinas</div>
       <div class="nb">DATOS</div>
       <div class="ni" data-s="pg-stats" onclick="GS('pg-stats',this)"><span class="ico">📈</span>Estadísticas</div>
       <div class="ni" data-s="pg-cfg" onclick="GS('pg-cfg',this)"><span class="ico">⚙</span>Configuración</div>
@@ -326,6 +329,44 @@ button,select,input,textarea{font-family:inherit}
     <div class="page" id="pg-risk">
       <div class="sh"><div><div class="tag">07</div><h2>FICHA DE RIESGO</h2><p>Vista pre-entrenamiento</p></div></div>
       <div class="ct"><div class="risk-grid" id="risk-cards"></div></div>
+    </div>
+
+    <!-- BIBLIOTECA -->
+    <div class="page" id="pg-lib">
+      <div class="sh">
+        <div><div class="tag">09</div><h2>BIBLIOTECA</h2><p>Ejercicios de readaptación y prevención</p></div>
+        <button class="btn btn-p" onclick="openAddEx()">+ Añadir ejercicio</button>
+      </div>
+      <div class="ct">
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;align-items:center">
+          <input class="fc" id="lib-search" type="text" placeholder="Buscar ejercicio..." style="max-width:220px;padding:7px 11px" oninput="renderLib()">
+          <select class="fc" id="lib-phase" style="max-width:180px" onchange="renderLib()">
+            <option value="">Todas las fases</option>
+            <option>Prevención</option><option>RTT</option><option>RTP</option><option>Fuerza</option><option>Potencia</option><option>Movilidad</option>
+          </select>
+          <select class="fc" id="lib-muscle" style="max-width:180px" onchange="renderLib()">
+            <option value="">Todos los grupos</option>
+            <option>Isquiotibiales</option><option>Cuádriceps</option><option>Glúteos</option><option>Gemelos</option><option>Core</option><option>Aductores</option><option>Tobillo</option><option>General</option>
+          </select>
+        </div>
+        <div id="lib-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px"></div>
+      </div>
+    </div>
+
+    <!-- RUTINAS -->
+    <div class="page" id="pg-rut">
+      <div class="sh">
+        <div><div class="tag">10</div><h2>RUTINAS</h2><p>Programas individuales de readaptación</p></div>
+        <button class="btn btn-p" onclick="openAssignRut()">+ Asignar rutina</button>
+      </div>
+      <div class="ct">
+        <div class="fbar" id="rut-fbar">
+          <button class="fb on" onclick="rutFilter('',this)">Todas</button>
+          <button class="fb" onclick="rutFilter('activa',this)">Activas</button>
+          <button class="fb" onclick="rutFilter('finalizada',this)">Finalizadas</button>
+        </div>
+        <div id="rut-list"></div>
+      </div>
     </div>
 
     <!-- ESTADÍSTICAS -->
@@ -497,6 +538,49 @@ button,select,input,textarea{font-family:inherit}
   <div class="mf"><button class="btn btn-g" onclick="CM('m-rpe')">Cancelar</button><button class="btn btn-p" onclick="addRPE()">Guardar sesión</button></div>
 </div></div>
 
+<div class="ov" id="m-ex"><div class="mdl" style="max-width:500px">
+  <div class="mh"><span class="mt">Añadir ejercicio</span><button class="mc" onclick="CM('m-ex')">✕</button></div>
+  <div class="mb">
+    <div class="fr">
+      <div class="fg" style="grid-column:1/-1"><label class="fl">Nombre *</label><input class="fc" id="ex-n" type="text" placeholder="Nordic Curl"></div>
+      <div class="fg"><label class="fl">Fase</label>
+        <select class="fc" id="ex-ph"><option value="">—</option><option>Prevención</option><option>RTT</option><option>RTP</option><option>Fuerza</option><option>Potencia</option><option>Movilidad</option></select>
+      </div>
+      <div class="fg"><label class="fl">Grupo muscular</label>
+        <select class="fc" id="ex-mu"><option value="">—</option><option>Isquiotibiales</option><option>Cuádriceps</option><option>Glúteos</option><option>Gemelos</option><option>Core</option><option>Aductores</option><option>Tobillo</option><option>General</option></select>
+      </div>
+      <div class="fg"><label class="fl">Series × Reps</label><input class="fc" id="ex-sr" type="text" placeholder="3×8 / 3×30s"></div>
+      <div class="fg"><label class="fl">Material</label><input class="fc" id="ex-mat" type="text" placeholder="Sin material"></div>
+      <div class="fg" style="grid-column:1/-1"><label class="fl">Descripción</label><textarea class="fc" id="ex-desc" rows="2" placeholder="Descripción del ejercicio..."></textarea></div>
+      <div class="fg" style="grid-column:1/-1"><label class="fl">ID vídeo YouTube</label><input class="fc" id="ex-yt" type="text" placeholder="dLw3fxTBTX0 (solo el ID)"></div>
+    </div>
+  </div>
+  <div class="mf"><button class="btn btn-g" onclick="CM('m-ex')">Cancelar</button><button class="btn btn-p" onclick="addEx()">Añadir</button></div>
+</div></div>
+
+<div class="ov" id="m-rut"><div class="mdl" style="max-width:500px">
+  <div class="mh"><span class="mt">Asignar rutina</span><button class="mc" onclick="CM('m-rut')">✕</button></div>
+  <div class="mb">
+    <div class="fg"><label class="fl">Jugador *</label><select class="fc" id="rut-pid"></select></div>
+    <div class="fg"><label class="fl">Nombre de la rutina *</label><input class="fc" id="rut-n" type="text" placeholder="Readaptación Isquio Fase 2"></div>
+    <div class="fr">
+      <div class="fg"><label class="fl">Inicio</label><input class="fc" id="rut-st" type="date"></div>
+      <div class="fg"><label class="fl">Fin previsto</label><input class="fc" id="rut-en" type="date"></div>
+    </div>
+    <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--t2);margin:12px 0 8px">Ejercicios asignados</div>
+    <div id="rut-exlist" style="max-height:180px;overflow-y:auto;display:flex;flex-direction:column;gap:5px"></div>
+  </div>
+  <div class="mf"><button class="btn btn-g" onclick="CM('m-rut')">Cancelar</button><button class="btn btn-p" onclick="addRut()">Asignar</button></div>
+</div></div>
+
+<!-- VIDEO OVERLAY -->
+<div class="ov" id="m-video" onclick="closeVideo(event)">
+  <div style="background:#000;border-radius:10px;overflow:hidden;width:min(800px,94vw);aspect-ratio:16/9;position:relative">
+    <button style="position:absolute;top:8px;right:8px;background:rgba(255,255,255,.15);color:#fff;border:none;cursor:pointer;font-size:17px;width:30px;height:30px;border-radius:50%;z-index:1;display:flex;align-items:center;justify-content:center" onclick="CM('m-video')">✕</button>
+    <iframe id="yt-frame" width="100%" height="100%" frameborder="0" allowfullscreen allow="autoplay;encrypted-media" style="border:none"></iframe>
+  </div>
+</div>
+
 <style>
 .ok-c{color:var(--ok)}.warn-c{color:var(--warn)}.bad-c{color:var(--bad)}
 .mob-btn{display:none;position:fixed;top:12px;left:12px;z-index:300;background:var(--surface);border:1px solid var(--bdr);border-radius:var(--rs);padding:7px 10px;cursor:pointer;font-size:15px;box-shadow:var(--sh)}
@@ -519,9 +603,11 @@ function loadClubs(){try{CLUBS=JSON.parse(localStorage.getItem(CKEY)||'[]')}catc
 function saveClubs(){localStorage.setItem(CKEY,JSON.stringify(CLUBS))}
 function dkey(id){return'ph_d_'+id}
 function loadData(id){
-  try{DATA=JSON.parse(localStorage.getItem(dkey(id))||'null')||{players:[],injuries:[],tests:[],rpe:[],config:{}}}
-  catch(e){DATA={players:[],injuries:[],tests:[],rpe:[],config:{}}}
+  try{DATA=JSON.parse(localStorage.getItem(dkey(id))||'null')||{players:[],injuries:[],tests:[],rpe:[],exercises:[],routines:[],config:{}}}
+  catch(e){DATA={players:[],injuries:[],tests:[],rpe:[],exercises:[],routines:[],config:{}}}
   if(!DATA.config)DATA.config={};
+  if(!DATA.exercises)DATA.exercises=[];
+  if(!DATA.routines)DATA.routines=[];
   TH=Object.assign({cmj:32,asim:15,sp10:1.85,nordic:6,hooper:28},DATA.config.th||{});
 }
 function saveData(){
@@ -613,7 +699,7 @@ function GS(id){
   document.querySelectorAll('.ni').forEach(n=>n.classList.remove('on'));
   const pg=document.getElementById(id);if(pg)pg.classList.add('on');
   const ni=document.querySelector(`.ni[data-s="${id}"]`);if(ni)ni.classList.add('on');
-  ({pg-dash:renderDash,pg-squad:renderSquad,pg-avail:renderAvail,pg-inj:renderInj,pg-tests:renderTests,pg-load:renderLoad,pg-risk:renderRisk,pg-stats:renderStats})[id]?.();
+  ({pg-dash:renderDash,pg-squad:renderSquad,pg-avail:renderAvail,pg-inj:renderInj,pg-tests:renderTests,pg-load:renderLoad,pg-risk:renderRisk,pg-lib:renderLib,pg-rut:renderRut,pg-stats:renderStats})[id]?.();
   badges();
 }
 
@@ -1096,6 +1182,147 @@ function exportWeeklyReport(){
 // ==============================
 // INIT
 // ==============================
+// ==============================
+// BIBLIOTECA
+// ==============================
+function renderLib(){
+  const search=(document.getElementById('lib-search')||{}).value||'';
+  const phase=(document.getElementById('lib-phase')||{}).value||'';
+  const muscle=(document.getElementById('lib-muscle')||{}).value||'';
+  const exs=DATA.exercises.filter(e=>{
+    const ms=!search||e.name.toLowerCase().includes(search.toLowerCase())||(e.desc||'').toLowerCase().includes(search.toLowerCase());
+    const mp=!phase||e.phase===phase;
+    const mm=!muscle||e.muscle===muscle;
+    return ms&&mp&&mm;
+  });
+  const g=document.getElementById('lib-grid');if(!g)return;
+  if(!exs.length){
+    g.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:48px;color:var(--t3)"><div style="font-size:32px;margin-bottom:10px">📚</div><div style="font-weight:600;margin-bottom:4px">Sin ejercicios</div><div style="font-size:13px">Añade el primero con el botón superior.</div></div>';
+    return;
+  }
+  g.innerHTML=exs.map(e=>`
+    <div style="background:var(--surface);border:1px solid var(--bdr);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);transition:border-color .15s" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--bdr)'">
+      <div style="aspect-ratio:16/9;background:var(--raised);position:relative;overflow:hidden;cursor:${e.yt?'pointer':'default'}" onclick="${e.yt?`playVideo('${e.yt}','${e.name.replace(/'/g,"\\'")}')`:''}" >
+        ${e.yt
+          ? `<img src="https://img.youtube.com/vi/${e.yt}/mqdefault.jpg" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3)"><div style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;font-size:18px">▶</div></div>`
+          : `<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--t3);font-size:13px">Sin vídeo</div>`}
+      </div>
+      <div style="padding:13px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:6px">${e.name}</div>
+        <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:7px">
+          ${e.phase?`<span style="font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;background:var(--a8);color:var(--accent)">${e.phase}</span>`:''}
+          ${e.muscle?`<span style="font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px;background:var(--raised);color:var(--t2)">${e.muscle}</span>`:''}
+        </div>
+        ${e.desc?`<div style="font-size:12px;color:var(--t2);margin-bottom:6px;line-height:1.4">${e.desc}</div>`:''}
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:4px">
+          <div style="font-size:11px;color:var(--t3)">${e.series||''}${e.material?' · '+e.material:''}</div>
+          <div style="display:flex;gap:5px">
+            ${e.yt?`<button class="btn btn-g btn-s" onclick="playVideo('${e.yt}','${e.name.replace(/'/g,"\\'")}')">▶ Ver</button>`:''}
+            <button class="btn btn-d btn-s" onclick="delEx('${e.id}')">✕</button>
+          </div>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function openAddEx(){
+  ['ex-n','ex-sr','ex-mat','ex-desc','ex-yt'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('ex-ph').value='';document.getElementById('ex-mu').value='';
+  OM('m-ex');
+}
+
+function addEx(){
+  const name=document.getElementById('ex-n').value.trim();
+  if(!name){toast('El nombre es obligatorio',true);return}
+  DATA.exercises.push({id:uid(),name,phase:document.getElementById('ex-ph').value,muscle:document.getElementById('ex-mu').value,series:document.getElementById('ex-sr').value.trim(),material:document.getElementById('ex-mat').value.trim(),desc:document.getElementById('ex-desc').value.trim(),yt:document.getElementById('ex-yt').value.trim()});
+  saveData();CM('m-ex');renderLib();toast(name+' añadido');
+}
+
+function delEx(id){
+  if(!confirm('¿Eliminar ejercicio?'))return;
+  DATA.exercises=DATA.exercises.filter(e=>e.id!==id);
+  saveData();renderLib();
+}
+
+function playVideo(ytId,title){
+  document.getElementById('yt-frame').src=`https://www.youtube.com/embed/${ytId}?autoplay=1`;
+  OM('m-video');
+}
+function closeVideo(e){if(e.target.id==='m-video'){document.getElementById('yt-frame').src='';CM('m-video');}}
+
+// ==============================
+// RUTINAS
+// ==============================
+let rutF='';
+function rutFilter(f,el){rutF=f;document.querySelectorAll('#rut-fbar .fb').forEach(b=>b.classList.remove('on'));if(el)el.classList.add('on');renderRut();}
+
+function renderRut(){
+  const c=document.getElementById('rut-list');if(!c)return;
+  let ruts=DATA.routines||[];
+  if(rutF==='activa')ruts=ruts.filter(r=>rutStatus(r)==='activa');
+  if(rutF==='finalizada')ruts=ruts.filter(r=>rutStatus(r)==='finalizada');
+  ruts=[...ruts].sort((a,b)=>b.start.localeCompare(a.start));
+  if(!ruts.length){c.innerHTML='<div style="text-align:center;padding:48px;color:var(--t3)"><div style="font-size:32px;margin-bottom:10px">📋</div><div style="font-weight:600;margin-bottom:4px">Sin rutinas asignadas</div><div style="font-size:13px">Asigna una rutina a un jugador.</div></div>';return;}
+  c.innerHTML=ruts.map(r=>{
+    const p=DATA.players.find(pl=>pl.id===r.pid);
+    const exs=(r.exercises||[]).map(eid=>(DATA.exercises||[]).find(e=>e.id===eid)).filter(Boolean);
+    const st=rutStatus(r);
+    const stCol=st==='activa'?'var(--ok)':st==='próxima'?'var(--accent)':'var(--t3)';
+    const stBg=st==='activa'?'var(--ok8)':st==='próxima'?'var(--a8)':'var(--raised)';
+    const dl=r.end?dft(r.end):null;
+    return`<div style="background:var(--surface);border:1px solid var(--bdr);border-radius:var(--r);padding:16px;margin-bottom:10px;box-shadow:var(--sh)">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px">
+        <div>
+          <div style="font-family:Syne,sans-serif;font-size:14px;font-weight:700;margin-bottom:3px">${r.name}</div>
+          <div style="font-size:12px;color:var(--t2)">${p?p.n:'—'} <span class="pos-tag" style="margin-left:4px">${p?p.pos:''}</span></div>
+          <div style="font-size:11px;color:var(--t3);margin-top:3px">${fdt(r.start)}${r.end?' → '+fdt(r.end):''}</div>
+          ${dl!==null?`<div style="font-size:11px;font-weight:600;margin-top:2px;color:${dl<0?'var(--t3)':dl<=7?'var(--warn)':'var(--t2)'}">${dl<0?'Finalizada hace '+Math.abs(dl)+'d':dl===0?'Finaliza hoy':'Quedan '+dl+'d'}</div>`:''}
+        </div>
+        <div style="display:flex;flex-direction:column;gap:5px;align-items:flex-end">
+          <span style="font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px;background:${stBg};color:${stCol}">${st.toUpperCase()}</span>
+          <button class="btn btn-d btn-s" onclick="delRut('${r.id}')">Eliminar</button>
+        </div>
+      </div>
+      ${exs.length?`<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;padding-top:10px;border-top:1px solid var(--bdr)">${exs.map(e=>`<div style="display:flex;align-items:center;gap:6px;padding:5px 10px;background:var(--raised);border-radius:6px;font-size:12px;cursor:${e.yt?'pointer':'default'}" onclick="${e.yt?`playVideo('${e.yt}','${e.name.replace(/'/g,"\\'")}')`:''}">${e.yt?'▶ ':''}<span style="font-weight:500">${e.name}</span>${e.phase?`<span style="font-size:9px;font-weight:700;color:var(--accent)">${e.phase}</span>`:''}</div>`).join('')}</div>`:'<div style="font-size:12px;color:var(--t3);margin-top:6px;padding-top:8px;border-top:1px solid var(--bdr)">Sin ejercicios asignados</div>'}
+    </div>`;
+  }).join('');
+}
+
+function rutStatus(r){
+  const td=today();
+  if(!r.end||r.end>=td){if(!r.start||r.start<=td)return'activa';return'próxima';}
+  return'finalizada';
+}
+
+function openAssignRut(){
+  popSel(['rut-pid']);
+  document.getElementById('rut-n').value='';
+  document.getElementById('rut-st').value=today();
+  document.getElementById('rut-en').value='';
+  // Ejercicios checkboxes
+  const el=document.getElementById('rut-exlist');
+  const exs=DATA.exercises||[];
+  if(!exs.length){el.innerHTML='<div style="color:var(--t3);font-size:12px;padding:8px">Sin ejercicios en la biblioteca. Añade ejercicios primero.</div>';OM('m-rut');return;}
+  el.innerHTML=exs.map(e=>`<label style="display:flex;align-items:center;gap:7px;padding:7px 9px;border:1px solid var(--bdr);border-radius:6px;cursor:pointer;font-size:12px;font-weight:500;transition:.1s" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--bdr)'"><input type="checkbox" value="${e.id}" style="cursor:pointer;accent-color:var(--accent)">${e.name}${e.phase?` <span style="font-size:9px;color:var(--t3)">[${e.phase}]</span>`:''}</label>`).join('');
+  OM('m-rut');
+}
+
+function addRut(){
+  const pid=document.getElementById('rut-pid').value;
+  const name=document.getElementById('rut-n').value.trim();
+  if(!pid||!name){toast('Jugador y nombre obligatorios',true);return}
+  const exercises=Array.from(document.querySelectorAll('#rut-exlist input:checked')).map(c=>c.value);
+  if(!DATA.routines)DATA.routines=[];
+  DATA.routines.push({id:uid(),pid,name,start:document.getElementById('rut-st').value,end:document.getElementById('rut-en').value,exercises});
+  saveData();CM('m-rut');renderRut();toast('Rutina asignada');
+}
+
+function delRut(id){
+  if(!confirm('¿Eliminar esta rutina?'))return;
+  DATA.routines=(DATA.routines||[]).filter(r=>r.id!==id);
+  saveData();renderRut();
+}
+
 window.onload=function(){renderClubs();};
 </script>
 </body>
