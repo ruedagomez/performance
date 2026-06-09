@@ -837,7 +837,17 @@ function renderDash() {
         </div>`;}).join('')
     : '<div style="color:var(--t2);font-size:13px;padding:8px 0">Sin lesionados activos ✓</div>';
 
-  document.getElementById('d-carga').innerHTML = '<div style="color:var(--t2);font-size:13px;padding:8px 0">Disponible en Fase 2 — módulo de Carga/ACWR</div>';
+  document.getElementById('d-carga').innerHTML = (() => {
+    const alerts = D.players.filter(p=>{ const {acwr}=calcACWR(p.id); return acwr!==null&&acwr>1.3; });
+    if(!alerts.length) return '<div style="color:var(--t2);font-size:13px;padding:8px 0">Sin alertas de carga ✓</div>';
+    return alerts.map(p=>{
+      const {acwr}=calcACWR(p.id);
+      return `<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)">
+        <div><div style="font-weight:600;font-size:13px">${p.d} · ${sn(p.n)}</div><div style="font-size:11px;color:var(--t2)">${acwrLbl(acwr)}</div></div>
+        <span style="font-weight:700;font-size:13px;color:${acwr>1.5?'var(--inj)':'var(--cau)'}">${acwr.toFixed(2)}</span>
+      </div>`;
+    }).join('');
+  })();
 
   const ret = ai.map(inj=>{const d=daysOff(inj.date);return{inj,p:D.players.find(pl=>pl.id===inj.pid),left:Math.max(0,inj.rtp_est-d)};}).sort((a,b)=>a.left-b.left);
   document.getElementById('d-ret').innerHTML = ret.length
